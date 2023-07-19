@@ -1,0 +1,48 @@
+.comun{
+    margin: 6px;
+    padding: 0.3rem 2rem;
+    border: 2px transparent;
+    border-radius: 10px;
+    background-color: #1C312A;
+    color:  #C0B195;
+    padding: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px black;
+}
+
+.comun:hover {
+    margin: 4px;
+    border: 2px solid #1C312A;
+    color: black;
+    background-color: #70875D;
+    box-shadow: 2px 2px 4px #E1D9BF;
+}
+
+.cerrar{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    padding: 0.4rem;
+    background-color: #A84E3E;
+    color: #E1D9BF;
+    border: 2px solid #E1D9BF;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+    cursor: pointer;
+}
+
+.cerrar:hover{
+    font-size: 1.1em;
+    padding: 0.2rem 0.4rem;
+    border: black;
+}
+
+@media(max-width:600px){
+    .comun{
+        padding: 0.3rem 1rem;
+        font-size: 1.1em;
+    }
+}

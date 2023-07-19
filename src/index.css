@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin: 0;
+  min-width: 320px;
+  background-color: #E1D9BF;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: #C0B195;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #70875D;
+  border-radius: 10px;
+}

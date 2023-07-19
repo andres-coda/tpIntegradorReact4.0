@@ -1,0 +1,89 @@
+#root {
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+header{
+  margin: 0;
+  padding: 1rem;
+  background-color: #1C312A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+header h1{ 
+  color: #E1D9BF;
+}
+
+nav {
+  width: 98vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem; 
+}
+
+nav a{
+  padding: 1rem;
+  margin: 0;
+  color: #E1D9BF;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #E1D9BF;
+  border-radius: 5px;
+  font-size: 1.2em;
+  box-shadow: 2px 2px 4px black;
+}
+
+@media (max-width:490px){
+  nav a{
+    padding: 1rem 0.2rem;
+    font-size: 1em;
+  }
+  header h1{
+    font-size: 1.5em;
+  }
+}
+
+nav a:hover{
+  border: 2px solid #E1D9BF;
+  font-size: 1.8em;
+  padding: 0.5rem;
+  box-shadow: 4px 4px 8px white;
+  margin: 2px;
+}
+
+nav .aviso-Carrito p:focus{
+  color: #E1D9BF;
+}
+
+nav a:focus {
+  background-color: #70875D ;
+  border: 2px solid #A84E3E;
+  color: black;
+  
+}
+
+.linck-carrito{
+  position: relative;
+}
+.aviso-Carrito{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  border: 1px solid #E1D9BF;
+  border-radius: 5px;
+  background-color: #A84E3E;
+  padding: 0.3rem;
+  box-shadow: 2px 2px 4px white;
+  font-size: 0.5em;
+}
+
+
+

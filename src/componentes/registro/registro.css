@@ -1,0 +1,50 @@
+.formulario{
+    margin: 1rem;
+    padding: 1rem 0.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0B195;
+    width: 50vw;
+}
+
+.formulario H2{
+    margin: 0.5REM;
+    color: #1C312A;
+}
+
+.formulario input, .formulario label {
+    margin: 0.3rem;
+    width: 90%;
+}
+
+.formulario label{
+    color:  #1C312A;
+    text-align: center;
+}
+
+.formulario input{
+    text-align: left;
+    border-radius: 10px;
+    padding: 0.1rem 0.8rem;
+}
+
+
+
+
+.formulario a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+@media (max-width:700px){
+    .formulario{
+        width: 85vw;
+    }
+}
