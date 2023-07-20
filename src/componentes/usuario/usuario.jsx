@@ -1,3 +1,5 @@
+/* Esta pantalla iba a ser un login, pero no pude guardar los usuarios en el contexto, se me actualizaba, y los perdía,
+así que solo se puede desechar*/
 import Boton from "../botones/Boton";
 import Formulario from "../formulario/Formulario";
 
