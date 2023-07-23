@@ -8,8 +8,10 @@ import Formulario from "../formulario/Formulario";
 import './registro.css'
 import { useNavigate } from "react-router-dom";
 import Boton from "../botones/Boton";
+import Parrafo from "../parrafo/parrafo";
 function Registro() {
     const {datos, setDatos} = useContext(contexto);
+    const [ alerta, setAlerta ] = useState("");
     useEffect(()=>{
         setDatos((prev)=>({...prev, titulo:"Registro de usuario"}));
     },[datos.titulo]);
@@ -40,12 +42,11 @@ function Registro() {
             nuevoElemento=datos.usuario.slice();
         }
         nuevoElemento.push(datosRegistro); 
-        if (!datos.usuario.includes(datosRegistro)) {
+        if (datos.usuario.findIndex((elemento) => elemento.usuario === datosRegistro.usuario)===-1) {
             setDatos((prev)=>({...prev, usuario:nuevoElemento, usuarioActivo:datosRegistro}));
-            alert("inicio sesion con exito");
             navigate("/");
         } else {
-            alert("El usuario ya fue registrado")
+            setAlerta("* El usuario ya fue registrado")
         }     
     }
     return (
@@ -53,6 +54,11 @@ function Registro() {
         <div className="div-Formulario">
             <form className="formulario" onSubmit={enviarDatos} action="">
                 <h2>REGISTRO</h2>
+                {alerta!== "" ? (
+                    <Parrafo texto={alerta} />
+                ):(
+                    null
+                )}
                 <Formulario id={"usuario"} texto={"Nombre de usuario"} tipo={"text"} onChan={manejadorDelImput}/>
                 <Formulario id={"clave"} texto={"Contraseña"} tipo={"password"} onChan={manejadorDelImput} />
                 <Formulario id={"nombre"} texto={"Nombre"} tipo={"text"} onChan={manejadorDelImput}/>
