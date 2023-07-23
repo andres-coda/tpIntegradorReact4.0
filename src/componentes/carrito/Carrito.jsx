@@ -6,9 +6,9 @@ y un cuerpo que se llena mapeando el arreglo que guarda los elementos que se agr
 Este arreglo es parte del Objeto datos, que es pasado por contexto. Tiene una variable total
 que se encarga de sumar cada producto multiplicado por la cantidad que se agrego al carrito. Y una funciones de 
 evento click que maneja el boton comprar, que borra el contenido de carrito, y a travez de navigate va a la ruta 
-de /compra si el usuario se registro, que habre el componente compra, que muestra el mensaje de agradecimiento,  
-si no se registro va al componente de registro, en los td de la lista tiene en forma de titulos del producto unos
-Linck que cada uno lleva a la ruta del producto seleccionado, las rutas fueron generadas en el app, y hay una ruta 
+de /compra si el usuario se logueado abre el componente compra y muestra el mensaje de agradecimiento,  
+si no se ha logueado va al componente de usuario, en los td de la lista tiene en forma de titulos del producto unos
+Linck. Cada uno lleva a la ruta del producto seleccionado, las rutas fueron generadas en el app, y hay una ruta 
 para cada producto a travez del id. Cada vez que se hace click en cualquier producto, se redirige a los detalles
 al componente productoSeleccionado. Si el carrito está vacío muestra un mensaje que dice que el carrito esta vacío. */
 
@@ -29,11 +29,11 @@ function Carrito(){
 
 
     const btnClick = (e) => {
-        if (datos.usuario.length!==0){
+        if (datos.usuarioActivo.usuario!=="perfil"){
             setDatos((prev)=>({...prev,carrito:[]}));
             navigate("/compra");
         } else {
-            navigate("/registro");
+            navigate("/usuario");
         }
     }
 

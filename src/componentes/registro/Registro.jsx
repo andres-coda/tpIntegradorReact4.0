@@ -1,5 +1,6 @@
 /* Registro es un formulario para ingresar datos, que los guarda en el estado datosRegistro, y después en el 
-contexto como un elemento mas del arreglo usuario. */
+contexto como un elemento mas del arreglo usuario. Una vez que se agrego un usuario nuevo lo usa como el 
+usuario logueado, lo guarda en usuarioActivo y se dirige a la ruta del inicio*/
 
 import { useState, useContext, useEffect } from "react";
 import { contexto } from "../contexto/Contexto";
@@ -38,13 +39,13 @@ function Registro() {
         if (datos.usuario.length !==0){
             nuevoElemento=datos.usuario.slice();
         }
-        console.log(datos.usuario);
         nuevoElemento.push(datosRegistro); 
         if (!datos.usuario.includes(datosRegistro)) {
-            setDatos((prev)=>({...prev, usuario:nuevoElemento, usuarioActual:datosRegistro}));
-            navigate("/perfil");
+            setDatos((prev)=>({...prev, usuario:nuevoElemento, usuarioActivo:datosRegistro}));
+            alert("inicio sesion con exito");
+            navigate("/");
         } else {
-            navigate("/perfilExistente");
+            alert("El usuario ya fue registrado")
         }     
     }
     return (

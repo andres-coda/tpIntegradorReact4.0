@@ -35,7 +35,7 @@ const {datos } = useContext(contexto);
         <p className='aviso-Carrito'>{datos.carrito?.length}</p>) : (
           null
         )}</Link>
-        <Link to='/perfil'>PERFIL</Link>
+        <Link to='/perfil'>{datos.usuarioActivo.usuario.toUpperCase()}</Link>
     </nav>
     </header>
     <Routes>
@@ -47,11 +47,16 @@ const {datos } = useContext(contexto);
         <Route path={`/producto/${dato.id}`} element={<ProductoSeleccionado dato={dato}/>} key={dato.id}/>
         )
         })}
+      {datos.usuario.map((dato, index)=>{
+        return (
+        <Route path={`/perfil/${dato.usuario}`} element={<Perfil usuario={dato}/>} key={index}/>
+        )
+        })}
       <Route path='/compra' element={<Comprar />} />
       <Route path='/' element={<Inicio categoria='todas'/>} />
       <Route path='/categorias' element={<Categorias/>} />
       <Route path='/carrito' element={<Carrito/>} />
-      <Route path='/perfil' element={<Perfil/>} />
+      <Route path='/perfil' element={<Perfil usuario={datos.usuarioActivo}/>} />
       <Route path='/registro' element={<Registro/>} />
       <Route path='/usuario' element={<Usuario/>} />
     </Routes>

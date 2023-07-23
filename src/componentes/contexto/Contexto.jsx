@@ -4,15 +4,15 @@ del objeto, lo inicializa poniendo los datos (data) que necesita de la api en un
 igual que las categorias, el titulo se encarga de los mensajes que salen en la cabecera de la pantalla, 
 se modifica en el componente categoria, carrito, perfil, registro, y a travez del
 navegador, carrito es un arreglo vacío que se va a ir llenando a medida que se agreguen productos al carro, 
-también tiene usuario, y usuarioActivo como un intento de hacer un registro pero no funciono, no pude guardar
-los registros en el arreglo usuarios y que se mantengan para usarlos en otros componentes, solo el usuarioActual 
-pude utilizar */
+también tiene usuario, y usuarioActivo para hacer un registro, que guarda los datos registrados en el arreglo usuarios 
+y el usuarioActivo es el que esta logueado en el momento, cuando cierra sesión este usario pasa a ser, usuario.usuario: "perfil"
+y esta disponible para que otro usuario pueda loguearse */
 
 
 import { createContext, useEffect, useState } from "react";
 export const contexto = createContext({});
 export const ProvedorContexto = ({children}) => {
-    const [ datos, setDatos ] = useState ({data:[], carrito:[], categorias:[], titulo:"La tienda", usuario:[], usuarioActivo: {}});
+    const [ datos, setDatos ] = useState ({data:[], carrito:[], categorias:[], titulo:"La tienda", usuario:[], usuarioActivo: {usuario:"perfil"}});
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products')
         .catch(error =>{

@@ -1,0 +1,31 @@
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario p{
+    color: #A84E3E;
+    margin: 0.3rem;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.formulario .btnFormulario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.formulario .btnFormulario button{
+    margin: 1rem 0.5rem;
+    font-size: 1em;
+}
+
+.formulario .btnFormulario button:hover{
+    font-size: 1em;
+    margin: 0.5rem 0.3rem;
+}
