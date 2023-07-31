@@ -1,0 +1,20 @@
+ul {
+    list-style-type:none;
+    padding: 0;
+
+}
+li {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0.2rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px black;
+}
+
+li:hover{
+    padding: 0 1rem;
+    cursor: pointer;
+    background-color: #1C312A  ;
+    box-shadow: 6px 6px 6px #1C312A;
+    color: #E1D9BF;
+}

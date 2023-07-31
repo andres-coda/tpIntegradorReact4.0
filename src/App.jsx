@@ -12,9 +12,10 @@ import { useContext } from 'react'
 import { contexto } from './componentes/contexto/Contexto.jsx'
 import ProductoSeleccionado from './componentes/productoSeleccionado/ProductoSeleccionado'
 import Comprar from './componentes/compra/compra'
-import Registro from './componentes/registro/registro'
+import Registro from './componentes/registro/Registro'
 import Perfil from './componentes/perfil/perfil'
 import Usuario from './componentes/usuario/usuario'
+import Busqueda from './componentes/busqueda/busqueda'
 
 
 
@@ -29,8 +30,8 @@ const {datos } = useContext(contexto);
 
     <Titulo />
     <nav>
-      <Link to='/'>INICIO</Link>
       <Link to='/categorias'>CATEGORÍAS</Link>
+      <Link to='/busqueda'>BUSCAR</Link>
       <Link to='/carrito' className='linck-carrito'>CARRITO{datos.carrito?.length!== 0 ? (
         <p className='aviso-Carrito'>{datos.carrito?.length}</p>) : (
           null
@@ -59,6 +60,7 @@ const {datos } = useContext(contexto);
       <Route path='/perfil' element={<Perfil usuario={datos.usuarioActivo}/>} />
       <Route path='/registro' element={<Registro/>} />
       <Route path='/usuario' element={<Usuario/>} />
+      <Route path='/busqueda' element={<Busqueda/>} />
     </Routes>
     </BrowserRouter>
     
